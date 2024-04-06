@@ -10,7 +10,7 @@
 <template>
 	<div id="app">
 		<AppHeader />
-		<div class="container mt-3">
+		<div class="container-xl" style="padding: 0;">
 			<router-view />
 		</div>
 	</div>
