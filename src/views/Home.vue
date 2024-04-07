@@ -1,5 +1,5 @@
 <template>
-	<div style="margin-bottom: 30px;">
+	<div style="margin-bottom: 30px">
 		<div id="carouselExampleIndicators" class="carousel slide" style="margin-top: 5px">
 			<div class="carousel-indicators">
 				<button
@@ -25,10 +25,10 @@
 			</div>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img src="../assets/SlideHome1.jpg" class="d-block w-100" alt="..." />
+					<img src="../assets/SlideHome2.jpg" class="d-block w-100" alt="..." />
 				</div>
 				<div class="carousel-item">
-					<img src="../assets/SlideHome2.jpg" class="d-block w-100" alt="..." />
+					<img src="../assets/SlideHome1.jpg" class="d-block w-100" alt="..." />
 				</div>
 				<div class="carousel-item">
 					<img src="../assets/SlideHome3.jpg" class="d-block w-100" alt="..." />

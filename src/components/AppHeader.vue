@@ -24,7 +24,7 @@
 						<a class="nav-link" href="#">Thư viện</a>
 					</p>
 					<p class="nav-item" style="background-color: white">
-						<a class="nav-link" href="#">Tài khoản</a>
+						<router-link class="nav-link" :to="'/account'">Tài khoản</router-link>
 					</p>
 
 					<p v-if="isLoggedIn" class="nav-item" style="background-color: white">
