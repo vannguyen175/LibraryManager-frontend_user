@@ -16,7 +16,7 @@ class AccountService {
 	async deleteAll() {
 		return (await this.api.delete("/")).data;
 	}
-	async get(id) {
+	async getDetailUser(id) {
 		return (await this.api.get(`/${id}`)).data;
 	}
 	async update(id, data) {

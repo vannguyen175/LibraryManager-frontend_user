@@ -16,10 +16,13 @@
 
 <template>
 	<div class="card">
-		<img :src="book.anhbia" alt="anhbia" />
+		<router-link style="padding: 0; width: 100%;" :to="`detail-book/${book._id}`"
+			><img :src="book.anhbia" alt="anhbia"
+		/></router-link>
+
 		<p class="tensach">{{ book.tensach }}</p>
 		<p class="dongia">{{ formatPrice(book.dongia) }}đ</p>
-		<button class="muonsach-btn">Mượn sách</button>
+		<router-link class="muonsach-btn" :to="`detail-book/${book._id}`">Mượn sách</router-link>
 	</div>
 </template>
 
@@ -35,7 +38,7 @@
 
 		img {
 			display: inline-block;
-			max-width: 100%;
+			width: 150px;
 			height: 190px;
 			border-radius: 8px;
 		}
@@ -49,6 +52,7 @@
 		.dongia {
 			color: red;
 			font-weight: 500;
+			margin: 0;
 		}
 
 		.muonsach-btn {

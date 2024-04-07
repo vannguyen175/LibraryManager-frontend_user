@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="margin-bottom: 30px;">
 		<div id="carouselExampleIndicators" class="carousel slide" style="margin-top: 5px">
 			<div class="carousel-indicators">
 				<button
@@ -57,7 +57,7 @@
 			</button>
 		</div>
 		<div class="inner-content">
-			<p class="title">Sách mới thêm</p>
+			<p class="title ps-3">Sách mới thêm</p>
 			<div class="d-flex">
 				<div v-for="(book, index) in books" :key="index">
 					<!-- Truyền mỗi cuốn sách vào BookCard -->

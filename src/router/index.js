@@ -2,11 +2,23 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/views/Home.vue";
 import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
+import DetailBook from "@/views/DetailBook.vue";
+import Account from "@/views/Account.vue";
 const routes = [
 	{
 		path: "/",
 		name: "home",
 		component: Home,
+	},
+	{
+		path: "/detail-book/:id",
+		name: "detail-book",
+		component: DetailBook,
+	},
+	{
+		path: "/account",
+		name: "account",
+		component: Account,
 	},
 	{
 		path: "/login",
