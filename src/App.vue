@@ -10,7 +10,7 @@
 <template>
 	<div id="app">
 		<AppHeader />
-		<div class="container-xl" style="padding: 0;">
+		<div class="container-xl" style="padding: 0 0 20px 0; min-height: 100vh">
 			<router-view />
 		</div>
 	</div>

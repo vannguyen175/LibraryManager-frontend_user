@@ -22,7 +22,7 @@
 
 		<p class="tensach">{{ book.tensach }}</p>
 		<p class="dongia">{{ formatPrice(book.dongia) }}đ</p>
-		<router-link class="muonsach-btn" :to="`detail-book/${book._id}`">Mượn sách</router-link>
+		<router-link class="muonsach-btn" :to="`detail-book/${book._id}`">Xem chi tiết</router-link>
 	</div>
 </template>
 

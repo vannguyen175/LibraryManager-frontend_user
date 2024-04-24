@@ -4,11 +4,17 @@ import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import DetailBook from "@/views/DetailBook.vue";
 import Account from "@/views/Account.vue";
+import Library from "@/views/Library.vue";
 const routes = [
 	{
 		path: "/",
 		name: "home",
 		component: Home,
+	},
+	{
+		path: "/library",
+		name: "library",
+		component: Library,
 	},
 	{
 		path: "/detail-book/:id",

@@ -10,6 +10,8 @@ class BookService {
 	async getDetail(id) {
 		return (await this.api.get(`/${id}`)).data;
 	}
+
+	
 	// async update(id, data) {
 	// 	return (await this.api.put(`/${id}`, data)).data;
 	// }

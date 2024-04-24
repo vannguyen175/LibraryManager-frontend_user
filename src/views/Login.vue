@@ -24,7 +24,7 @@
 					const result = await AccountService.login(data);
 					this.message = "Đăng nhập thành công.";
 					localStorage.setItem("id_user", result?._id);
-					this.$router.push("/");
+					window.location.href = "/";
 				} catch (error) {
 					this.message = error.response.data?.message;
 					console.log("addAccount error", error);

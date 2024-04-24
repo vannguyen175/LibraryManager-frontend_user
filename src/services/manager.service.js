@@ -10,6 +10,9 @@ class ManagerService {
 	async lichSuMuon(data) {
 		return (await this.api.post("/history", data)).data;
 	}
+	async traSach(id) {
+		return (await this.api.delete(`/trasach/${id}`)).data;
+	}
 }
 
 export default new ManagerService();

@@ -21,7 +21,7 @@
 						<router-link class="nav-link" :to="'/'">Trang chủ</router-link>
 					</p>
 					<p class="nav-item" style="background-color: white">
-						<a class="nav-link" href="#">Thư viện</a>
+						<router-link class="nav-link" :to="'/library'">Thư viện</router-link>
 					</p>
 					<p class="nav-item" style="background-color: white">
 						<router-link class="nav-link" :to="'/account'">Tài khoản</router-link>

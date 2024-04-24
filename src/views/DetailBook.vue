@@ -19,9 +19,12 @@
 							}"
 						>
 							{{
-								detailBook.soquyen - detailBook.dangmuon > 0
+								detailBook.soquyen - detailBook.dangmuon - detailBook.sachchoduyet >
+								0
 									? "Số sách còn trong kho: " +
-									  (detailBook.soquyen - detailBook.dangmuon)
+									  (detailBook.soquyen -
+											detailBook.dangmuon -
+											detailBook.sachchoduyet)
 									: "Hết hàng"
 							}}
 						</p>
@@ -66,8 +69,10 @@
 				</div>
 			</div>
 			<div class="inner-content" style="padding: 20px 30px">
-				<div v-if="detailBook.soquyen - detailBook.dangmuon === 0">
-					<p style="font-size: 25px; color: red;">Hết hàng</p>
+				<div
+					v-if="detailBook.soquyen - detailBook.dangmuon - detailBook.sachchoduyet === 0"
+				>
+					<p style="font-size: 25px; color: red">Hết hàng</p>
 				</div>
 				<div v-else-if="!idUser">
 					<p>Vui lòng đăng nhập để thực hiện chức năng mượn sách.</p>
@@ -176,6 +181,9 @@
 				try {
 					const id = this.$route.params.id;
 					const detail = await bookService.getDetail(id);
+					if (detail && detail.soquyen - detail.dangmuon < 5) {
+						this.maxSachMuon = detail.soquyen - detail.dangmuon;
+					}
 					this.detailBook = detail;
 				} catch (error) {
 					console.log(error);
@@ -262,9 +270,7 @@
 		mounted() {
 			this.getDetailBook();
 			this.getDetailUser();
-			if (this.detailBook.soquyen - this.detailBook.dangmuon < 5) {
-				this.maxSachMuon = this.detailBook.soquyen - this.detailBook.dangmuon;
-			}
+			this.idUser = localStorage.getItem("id_user") || null;
 		},
 	};
 </script>

@@ -58,7 +58,7 @@
 		</div>
 		<div class="inner-content">
 			<p class="title ps-3">Sách mới thêm</p>
-			<div class="d-flex">
+			<div class="d-flex flex-wrap">
 				<div v-for="(book, index) in books" :key="index">
 					<!-- Truyền mỗi cuốn sách vào BookCard -->
 					<BookCard :book="book" />

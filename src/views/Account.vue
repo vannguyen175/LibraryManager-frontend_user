@@ -43,8 +43,13 @@
 								Đang mượn (Còn {{ soNgayConLai(book.ngaytra) }} ngày)
 							</span>
 							<span v-else class="muontre">
-								Chưa trả (Trễ {{ - soNgayConLai(book.ngaytra) }} ngày)
+								Chưa trả (Trễ {{ -soNgayConLai(book.ngaytra) }} ngày)
 							</span>
+						</td>
+						<td>
+							<button class="trasach-btn" @click="handleTraSach(book._id)">
+								Trả sách
+							</button>
 						</td>
 					</tr>
 				</tbody>
@@ -74,9 +79,6 @@
 					</tr>
 				</tbody>
 			</table>
-		</div>
-		<div class="inner-content" style="padding: 30px">
-			<p class="title">Sách đã mượn</p>
 		</div>
 	</div>
 </template>
@@ -149,6 +151,21 @@
 
 				return soNgay;
 			},
+
+			async handleTraSach(idOrder) {
+				if (confirm("Bạn có chắc muốn trả sách?")) {
+					const result = await managerService.traSach(idOrder);
+					if (result) {
+						this.refreshList();
+					}
+				} else {
+					console.log("Thoát.");
+				}
+			},
+
+			refreshList() {
+				this.listSachDangMuon();
+			},
 		},
 		mounted() {
 			this.getDetailUser();
@@ -164,7 +181,7 @@
 		border: 1px solid rgb(255, 204, 0);
 		padding: 3px 5px;
 		border-radius: 5px;
-		color: rgb(214, 144, 12);
+		color: rgb(194, 126, 0);
 	}
 	.dangmuon {
 		border: 1px solid rgb(0, 197, 0);
@@ -177,5 +194,20 @@
 		padding: 3px 5px;
 		border-radius: 5px;
 		color: red;
+	}
+
+	.trasach-btn {
+		background-color: white;
+		border: 1px solid black;
+		border-radius: 4px;
+		cursor: pointer;
+		color: var(--color-primary);
+		transition: 0.1s ease;
+		padding: 0 5px;
+
+		&:hover {
+			background-color: rgb(248, 208, 179);
+			color: black;
+		}
 	}
 </style>
